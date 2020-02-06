@@ -212,10 +212,10 @@ const Layout: React.FC = () => {
                   <CardContent>
                     <div className={classes.cardPricing}>
                       <Typography component="h2" variant="h3" color="textPrimary">
-                        ${tier.price}
+                        NOK{tier.price}
                       </Typography>
                       <Typography variant="h6" color="textSecondary">
-                        /mo
+                        /mnd
                       </Typography>
                     </div>
                     <ul>
