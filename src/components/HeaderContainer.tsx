@@ -15,20 +15,20 @@ const HeaderContainer: React.FC = () => {
   return (
     <React.Fragment>
       <Container maxWidth='lg' component='main' className={classes.heroContent}>
-        <div style={{ padding: "50px", paddingBottom: "90px" }}>
+        <div style={{ padding: "130px", paddingTop: "80px" }}>
           <Typography
-            style={{ color: "#ffa834" }}
+            style={{ color: "black"}}
             component='h3'
             variant='h3'
-            align='center'
+            align='left'
             color='textPrimary'
             gutterBottom
           >
-            SLAGORD? Valg av tjeneste og abonnement?
+            <span style={{ color: "#ffa834" }}>Anonymizer </span> turns domain <br/>knowledge into code
           </Typography>
           <br />
           <br />
-          <Typography
+{/*           <Typography
             variant='h5'
             align='center'
             color='textSecondary'
@@ -37,9 +37,9 @@ const HeaderContainer: React.FC = () => {
             Lorem Ipsum has been the industry's standard dummy text ever since
             the 1500s, when an unknown printer. Lorem Ipsum has been the
             industry's standard.
-          </Typography>
+          </Typography> */}
+          <hr style={{ width: "30%", float: "left"}} />
         </div>
-        <hr style={{ width: "20%" }} />
       </Container>
     </React.Fragment>
   );
