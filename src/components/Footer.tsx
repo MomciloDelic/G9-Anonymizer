@@ -5,10 +5,17 @@ import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-import Divider from '@material-ui/core/Divider';
+import Divider from "@material-ui/core/Divider";
 import Logo from "../assets/images/esito.png";
 
 const useStyles = makeStyles(theme => ({
+  "@global": {
+    ul: {
+      margin: 0,
+      padding: 0,
+      listStyle: "none"
+    }
+  },
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
@@ -19,14 +26,13 @@ const useStyles = makeStyles(theme => ({
       paddingBottom: theme.spacing(30)
     },
     padding: theme.spacing(20),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
-    height: theme.spacing(8),
+    height: theme.spacing(8)
   },
   divider: {
-    margin: theme.spacing(2, 25),
-  },
-  
+    margin: theme.spacing(2, 25)
+  }
 }));
 
 const footers = [
@@ -50,14 +56,17 @@ const Footer: React.FC = () => {
   return (
     <React.Fragment>
       <Container maxWidth='md' component='footer' className={classes.footer}>
-      <div>
-            <img src={Logo} alt='Esito Logo' />
-          </div>
+        <div>
+          <img src={Logo} alt='Esito Logo' />
+        </div>
         <Grid container spacing={0} justify='space-evenly'>
           {footers.map(footer => (
             <Grid item xs={6} sm={2}>
-              <Typography variant='h4' color='textPrimary' gutterBottom>
-              </Typography>
+              <Typography
+                variant='h4'
+                color='textPrimary'
+                gutterBottom
+              ></Typography>
               <ul>
                 {footer.description.map(item => (
                   <li key={item}>
@@ -70,14 +79,16 @@ const Footer: React.FC = () => {
             </Grid>
           ))}
           <Grid item xs={12}>
-              <Typography variant='h6' color='textPrimary' gutterBottom>
-              </Typography>
-                <Divider className={classes.divider} />
-                <Typography variant="h6" gutterBottom>
-                  Sanderakerveien 114A, 0402 Oslo
-                  <br></br>
-                  © Esito
-                </Typography>
+            <Typography
+              variant='h6'
+              color='textPrimary'
+              gutterBottom
+            ></Typography>
+            <Divider className={classes.divider} />
+            <Typography variant='h6' gutterBottom>
+              Sanderakerveien 114A, 0402 Oslo
+              <br></br>© Esito
+            </Typography>
           </Grid>
         </Grid>
         <Box mt={5}></Box>
