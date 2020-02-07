@@ -5,7 +5,7 @@ import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
-import Link from "@material-ui/core/Link";
+import AccountCircle from "@material-ui/icons/AccountCircle";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ListItem from "@material-ui/core/ListItem";
@@ -14,7 +14,6 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import Zoom from "@material-ui/core/Zoom";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 import NavLink from "./NavLink";
 import NavbarStyle from "./styles/NavbarStyle";
 import Logo from "../assets/images/esito.png";
@@ -63,13 +62,15 @@ const Navbar = (props: any) => {
             <img src={Logo} alt='Esito Logo' />
           </div>
 
-          <Toolbar>
-            <div>
-              <Link href='#' className={classes.loginButton}>
-                Login
-                <AccountCircle />
-              </Link>
+          <Toolbar style={{ justifyContent: "center", alignContent: "center" }}>
+            <div className={classes.desktopToolbar}>
+              <NavLink toSection='About' text={"Tjenester"} />
+              <NavLink toSection='Projects' text={"Om oss "} />
+              <NavLink toSection='Projects' text={"Kontakt "} />
             </div>
+            <IconButton>
+              <AccountCircle className={classes.loginButton} />
+            </IconButton>
           </Toolbar>
 
           <div className={classes.iconButton}>
@@ -85,13 +86,6 @@ const Navbar = (props: any) => {
         </Toolbar>
       </AppBar>
 
-      <Toolbar style={{ justifyContent: "center", alignContent: "center" }}>
-        <div className={classes.desktopToolbar}>
-          <NavLink toSection='About' text={"Tjenester"} />
-          <NavLink toSection='Projects' text={"Om oss "} />
-          <NavLink toSection='Projects' text={"Kontakt "} />
-        </div>
-      </Toolbar>
       <Drawer
         className={classes.drawer}
         variant='persistent'
