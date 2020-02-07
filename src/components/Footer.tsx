@@ -5,36 +5,42 @@ import Link from "@material-ui/core/Link";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
+import Divider from '@material-ui/core/Divider';
+import Logo from "../assets/images/esito.png";
 
 const useStyles = makeStyles(theme => ({
   footer: {
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    marginBottom: theme.spacing(10),
+    paddingBottom: theme.spacing(10),
     [theme.breakpoints.up("sm")]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6)
-    }
-  }
+      paddingTop: theme.spacing(5),
+      paddingBottom: theme.spacing(30)
+    },
+    padding: theme.spacing(20),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    height: theme.spacing(8),
+  },
+  divider: {
+    margin: theme.spacing(2, 25),
+  },
+  
 }));
 
 const footers = [
   {
-    title: "Om oss",
-    description: ["Inmeta"]
+    title: "Tjenester",
+    description: ["Tjenester"]
   },
   {
     title: "Om oss",
-    description: ["Inmeta"]
+    description: ["Om oss"]
   },
   {
-    title: "Om oss",
-    description: ["Inmeta"]
-  },
-  {
-    title: "Om oss",
-    description: ["Inmeta"]
+    title: "Kontakt",
+    description: ["Kontakt"]
   }
 ];
 
@@ -44,11 +50,13 @@ const Footer: React.FC = () => {
   return (
     <React.Fragment>
       <Container maxWidth='md' component='footer' className={classes.footer}>
-        <Grid container spacing={4} justify='space-evenly'>
+      <div>
+            <img src={Logo} alt='Esito Logo' />
+          </div>
+        <Grid container spacing={0} justify='space-evenly'>
           {footers.map(footer => (
-            <Grid item xs={6} sm={3}>
-              <Typography variant='h6' color='textPrimary' gutterBottom>
-                Om oss
+            <Grid item xs={6} sm={2}>
+              <Typography variant='h4' color='textPrimary' gutterBottom>
               </Typography>
               <ul>
                 {footer.description.map(item => (
@@ -61,6 +69,16 @@ const Footer: React.FC = () => {
               </ul>
             </Grid>
           ))}
+          <Grid item xs={12}>
+              <Typography variant='h6' color='textPrimary' gutterBottom>
+              </Typography>
+                <Divider className={classes.divider} />
+                  
+                  <h3>Sanderakerveien 114A, 0402 Oslo</h3>
+                
+                  <h3>© Esito</h3>
+            
+          </Grid>
         </Grid>
         <Box mt={5}></Box>
       </Container>
