@@ -73,11 +73,11 @@ const Footer: React.FC = () => {
               <Typography variant='h6' color='textPrimary' gutterBottom>
               </Typography>
                 <Divider className={classes.divider} />
-                  
-                  <h3>Sanderakerveien 114A, 0402 Oslo</h3>
-                
-                  <h3>© Esito</h3>
-            
+                <Typography variant="h6" gutterBottom>
+                  Sanderakerveien 114A, 0402 Oslo
+                  <br></br>
+                  © Esito
+                </Typography>
           </Grid>
         </Grid>
         <Box mt={5}></Box>
