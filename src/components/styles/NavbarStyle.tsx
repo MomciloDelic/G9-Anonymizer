@@ -44,7 +44,7 @@ const NavbarStyle = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    color: "#ffa834",
+    color: "#fe8e00",
     background: "#222222"
   },
   drawerHeader: {
@@ -55,13 +55,13 @@ const NavbarStyle = makeStyles(theme => ({
     justifyContent: "flex-start"
   },
   menuIcon: {
-    color: "#ffa834",
+    color: "#fe8e00",
     margin: "25px 0px 0 0"
   },
   desktopToolbar: {
     "& button": {
-      color: "#ffa834",
-      margin: "20px 70px",
+      color: "#fe8e00",
+      margin: "25px 25px",
       fontSize: "1.2rem",
       textTransform: "none",
       borderRadius: "0",
@@ -104,13 +104,14 @@ const NavbarStyle = makeStyles(theme => ({
     color: "#fff"
   },
   scrollIcon: {
-    backgroundColor: "#ffa834",
+    backgroundColor: "#fe8e00",
     color: "#000"
   },
   loginButton: {
-    fontSize: "1.2rem",
+    fontSize: "2.5rem",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    textDecoration: "none"
   }
 }));
 
