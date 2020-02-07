@@ -64,7 +64,7 @@ const Navbar = (props: any) => {
           </div>
 
           <Toolbar>
-            <div className={classes.desktopToolbar}>
+            <div>
               <Link href='#' className={classes.loginButton}>
                 Login
                 <AccountCircle />
