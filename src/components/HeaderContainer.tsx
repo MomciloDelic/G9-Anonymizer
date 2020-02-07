@@ -15,7 +15,7 @@ const HeaderContainer: React.FC = () => {
   return (
     <React.Fragment>
       <Container maxWidth='lg' component='main' className={classes.heroContent}>
-        <div style={{ padding: "10%", paddingTop: "5%" }}>
+        <div style={{ margin: "3%", marginLeft: "8%"}}>
           <Typography
             style={{ color: "black"}}
             component='h3'
