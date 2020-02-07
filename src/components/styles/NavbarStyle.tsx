@@ -108,7 +108,7 @@ const NavbarStyle = makeStyles(theme => ({
     color: "#000"
   },
   loginButton: {
-    fontSize: "3.5rem",
+    fontSize: "3rem",
     color: "#2b2626"
   }
 }));
