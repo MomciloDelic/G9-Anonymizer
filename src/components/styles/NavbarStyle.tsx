@@ -1,49 +1,116 @@
-import { makeStyles } from "@material-ui/core/styles/";
+import { makeStyles } from "@material-ui/core/styles";
+
+const drawerWidth = 240;
 
 const NavbarStyle = makeStyles(theme => ({
-  "@global": {
-    ul: {
-      margin: 0,
-      padding: 0,
-      listStyle: "none"
-    }
-  },
-  appBar: {
-    borderBottom: `1px solid ${theme.palette.divider}`
-  },
-  toolbar: {
-    flexWrap: "wrap"
-  },
-  toolbarTitle: {
+  root: {
     flexGrow: 1
   },
-  link: {
-    margin: theme.spacing(1, 1.5)
+  scroll: {
+    position: "fixed",
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
+    zIndex: 9999
   },
-  heroContent: {
-    padding: theme.spacing(8, 0, 6)
+  appBar: {
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen
+    }),
+    background: "transparent",
+    boxShadow: "none"
   },
-  cardHeader: {
-    backgroundColor:
-      theme.palette.type === "dark"
-        ? theme.palette.grey[700]
-        : theme.palette.grey[200]
+  appBarShift: {
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(["margin", "width"], {
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.enteringScreen
+    }),
+    marginRight: drawerWidth
   },
-  cardPricing: {
+  title: {
+    flexGrow: 1,
+    marginLeft: 25,
+    marginTop: 25,
+    letterSpacing: 3,
+    textTransform: "uppercase"
+  },
+  hide: {
+    display: "none"
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0
+  },
+  drawerPaper: {
+    width: drawerWidth,
+    color: "#ffa834",
+    background: "#222222"
+  },
+  drawerHeader: {
     display: "flex",
-    justifyContent: "center",
-    alignItems: "baseline",
-    marginBottom: theme.spacing(2)
+    alignItems: "center",
+    padding: theme.spacing(0, 1),
+    ...theme.mixins.toolbar,
+    justifyContent: "flex-start"
   },
-  footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
-    [theme.breakpoints.up("sm")]: {
-      paddingTop: theme.spacing(6),
-      paddingBottom: theme.spacing(6)
+  menuIcon: {
+    color: "#ffa834",
+    margin: "25px 0px 0 0"
+  },
+  desktopToolbar: {
+    "& button": {
+      color: "#ffa834",
+      margin: "20px 70px",
+      fontSize: "1.2rem",
+      textTransform: "none",
+      borderRadius: "0",
+      "&:hover": {
+        backgroundColor: "#fff"
+      },
+      "& a": {
+        "&:hover": {
+          boxShadow: "inset 0 -2px 0 0 #000"
+        }
+      },
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      }
     }
+  },
+  iconButton: {
+    [theme.breakpoints.down("md")]: {
+      display: "inline-flex"
+    },
+    [theme.breakpoints.up("md")]: {
+      display: "none"
+    }
+  },
+  drawerButtons: {
+    "& button": {
+      display: "block",
+      width: "100%"
+    },
+    "& a": {
+      color: "#fff",
+      textTransform: "none",
+      fontSize: "1.5rem",
+      borderRadius: 0,
+      display: "block",
+      width: "100%"
+    }
+  },
+  close: {
+    color: "#fff"
+  },
+  scrollIcon: {
+    backgroundColor: "#ffa834",
+    color: "#000"
+  },
+  loginButton: {
+    fontSize: "1.2rem",
+    display: "flex",
+    alignItems: "center"
   }
 }));
 

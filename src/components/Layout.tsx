@@ -1,5 +1,5 @@
 import React from "react";
-import Bar from "./Bar";
+import Navbar from "./Navbar";
 import CardContainer from "./CardContainer";
 import DemoContainer from "./DemoContainer";
 import HeaderContainer from "./HeaderContainer";
@@ -8,7 +8,7 @@ import Footer from "./Footer";
 const Layout: React.FC = () => {
   return (
     <React.Fragment>
-      <Bar />
+      <Navbar />
       <HeaderContainer />
       <CardContainer />
       <DemoContainer />
