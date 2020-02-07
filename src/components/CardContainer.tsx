@@ -61,7 +61,7 @@ const CardContainer: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Container maxWidth='md' component='main'>
+      <Container style={{paddingTop: "50px"}} maxWidth='md' component='main'>
         <Typography
           component='h1'
           variant='h2'
