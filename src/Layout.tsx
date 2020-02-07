@@ -69,7 +69,7 @@ const useStyles = makeStyles(theme => ({
       buttonVariant: 'outlined',
     },
     {
-      title: 'Pro',
+      title: '1 mnd',
       subheader: 'Most popular',
       price: '1500',
       description: [
@@ -79,7 +79,7 @@ const useStyles = makeStyles(theme => ({
       buttonVariant: 'contained',
     },
     {
-      title: 'Enterprise',
+      title: '3 mnd',
       price: '3000',
       description: [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
@@ -206,7 +206,7 @@ const Layout: React.FC = () => {
                     subheader={tier.subheader}
                     titleTypographyProps={{ align: 'center' }}
                     subheaderTypographyProps={{ align: 'center' }}
-                    action={tier.title === 'Pro' ? <StarIcon /> : null}
+                    action={tier.title === '1 mnd' ? <StarIcon /> : null}
                     className={classes.cardHeader}
                   />
                   <CardContent>
