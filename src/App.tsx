@@ -1,12 +1,9 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Layout from './Layout';
+import React from "react";
+import "./App.css";
+import Layout from "./Layout";
 
 const App = () => {
-  return (
-      <Layout/>
-  );
-}
+  return <Layout />;
+};
 
 export default App;
