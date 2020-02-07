@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 
 const NavLink = ({ toSection, text, handleDrawerClose }: any) => {
   return (
-    <Button>
+    <Button disableTouchRipple>
       <Link
         activeClass='active'
         style={{ display: "block", width: "100%" }}

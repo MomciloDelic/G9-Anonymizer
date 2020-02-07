@@ -45,7 +45,7 @@ const NavbarStyle = makeStyles(theme => ({
   drawerPaper: {
     width: drawerWidth,
     color: "#fe8e00",
-    background: "#222222"
+    background: "#fff"
   },
   drawerHeader: {
     display: "flex",
@@ -108,10 +108,8 @@ const NavbarStyle = makeStyles(theme => ({
     color: "#000"
   },
   loginButton: {
-    fontSize: "2.5rem",
-    display: "flex",
-    alignItems: "center",
-    textDecoration: "none"
+    fontSize: "3.5rem",
+    color: "#2b2626"
   }
 }));
 

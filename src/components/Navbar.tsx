@@ -67,10 +67,10 @@ const Navbar = (props: any) => {
               <NavLink toSection='About' text={"Tjenester"} />
               <NavLink toSection='Projects' text={"Om oss "} />
               <NavLink toSection='Projects' text={"Kontakt "} />
+              <IconButton>
+                <AccountCircle className={classes.loginButton} />
+              </IconButton>
             </div>
-            <IconButton>
-              <AccountCircle className={classes.loginButton} />
-            </IconButton>
           </Toolbar>
 
           <div className={classes.iconButton}>
