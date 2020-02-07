@@ -5,7 +5,6 @@ import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles(theme => ({
   heroContent: {
-    padding: theme.spacing(8, 0, 6),
     minHeight: "70vh"
   },
 }));
@@ -16,7 +15,7 @@ const HeaderContainer: React.FC = () => {
   return (
     <React.Fragment>
       <Container maxWidth='lg' component='main' className={classes.heroContent}>
-        <div style={{ margin: "3%"}}>
+        <div style={{ padding: "5%", marginTop: "8%"}}>
           <Typography
             style={{ color: "black"}}
             component='h3'
