@@ -30,10 +30,7 @@ const NavbarStyle = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
-    marginLeft: 25,
-    marginTop: 25,
-    letterSpacing: 3,
-    textTransform: "uppercase"
+    marginLeft: 25
   },
   hide: {
     display: "none"
@@ -92,7 +89,7 @@ const NavbarStyle = makeStyles(theme => ({
       width: "100%"
     },
     "& a": {
-      color: "#fff",
+      color: "#000",
       textTransform: "none",
       fontSize: "1.5rem",
       borderRadius: 0,
@@ -101,7 +98,7 @@ const NavbarStyle = makeStyles(theme => ({
     }
   },
   close: {
-    color: "#fff"
+    color: "#000"
   },
   scrollIcon: {
     backgroundColor: "#fe8e00",

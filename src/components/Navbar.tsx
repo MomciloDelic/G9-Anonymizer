@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import { Link as ScrollLink } from "react-scroll";
+import Link from "@material-ui/core/Link";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -101,7 +102,7 @@ const Navbar = (props: any) => {
           </IconButton>
         </div>
         <List>
-          {["About", "Projects"].map(text => (
+          {["Tjenester", "Om oss", "Kontakt", "Login"].map(text => (
             <ListItem button key={text} className={classes.drawerButtons}>
               <NavLink
                 toSection={text}
