@@ -10,12 +10,15 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
+import FeatureModal from "./FeaturesModal";
+
 const useStyles = makeStyles(theme => ({
+  title: {
+    color: "#fe8e00",
+    margin: "0 0 4rem 0"
+  },
   cardHeader: {
-    backgroundColor:
-      theme.palette.type === "dark"
-        ? theme.palette.grey[700]
-        : theme.palette.grey[200]
+    color: "#fe8e00"
   },
   cardPricing: {
     display: "flex",
@@ -27,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 
 const tiers = [
   {
-    title: "Free",
+    title: "DBano",
     price: "0",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -36,7 +39,7 @@ const tiers = [
     buttonVariant: "outlined"
   },
   {
-    title: "1 mnd",
+    title: "DBimport",
     subheader: "Most popular",
     price: "1500",
     description: [
@@ -46,7 +49,7 @@ const tiers = [
     buttonVariant: "contained"
   },
   {
-    title: "3 mnd",
+    title: "DBmasker",
     price: "3000",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -61,28 +64,17 @@ const CardContainer: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Container style={{paddingTop: "50px"}} maxWidth='md' component='main'>
+      <Container maxWidth='lg' component='main'>
         <Typography
           component='h1'
           variant='h2'
           align='center'
-          color='textPrimary'
           gutterBottom
+          className={classes.title}
         >
-          Slagord
+          Tjenester
         </Typography>
-        <Typography
-          variant='h5'
-          align='center'
-          color='textSecondary'
-          component='p'
-        >
-          Lorem Ipsum has been the industry's standard dummy text ever since the
-          1500s, when an unknown printer took a galley of type and scrambled it
-          to make a type specimen book. It has survived not only five centuries,
-          but also the leap into electronic typesetting, remaining essentially
-          unchanged.
-        </Typography>
+
         <Grid container spacing={5} alignItems='flex-end'>
           {tiers.map(tier => (
             // Enterprise card is full width at sm breakpoint
@@ -96,9 +88,7 @@ const CardContainer: React.FC = () => {
               <Card>
                 <CardHeader
                   title={tier.title}
-                  subheader={tier.subheader}
                   titleTypographyProps={{ align: "center" }}
-                  subheaderTypographyProps={{ align: "center" }}
                   action={tier.title === "Pro" ? <StarIcon /> : null}
                   className={classes.cardHeader}
                 />
@@ -125,9 +115,11 @@ const CardContainer: React.FC = () => {
                   </ul>
                 </CardContent>
                 <CardActions>
-                  <Button fullWidth color='primary'>
-                    {tier.buttonText}
-                  </Button>
+                  <FeatureModal
+                    buttonText='LES MER'
+                    title={tier.title}
+                    info={tier.description}
+                  />
                 </CardActions>
               </Card>
             </Grid>
