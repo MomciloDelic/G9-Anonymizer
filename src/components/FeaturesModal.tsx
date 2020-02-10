@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     img: {
       display: "block",
-      margin: "auto"
+      margin: "auto",
+      width: "100%"
     },
     close: {
       position: "absolute",

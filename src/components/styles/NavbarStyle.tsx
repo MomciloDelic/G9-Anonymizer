@@ -9,8 +9,7 @@ const NavbarStyle = makeStyles(theme => ({
   scroll: {
     position: "fixed",
     bottom: theme.spacing(2),
-    right: theme.spacing(2),
-    zIndex: -1
+    right: theme.spacing(2)
   },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {

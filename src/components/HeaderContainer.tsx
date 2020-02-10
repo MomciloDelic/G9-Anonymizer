@@ -13,39 +13,37 @@ const HeaderContainer: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <div
-        style={{ padding: "5%", marginTop: "8%" }}
-        className={classes.heroContent}
+    <div
+      style={{ padding: "5%", marginTop: "8%" }}
+      className={classes.heroContent}
+    >
+      <Typography
+        style={{ color: "black" }}
+        component='h3'
+        variant='h3'
+        align='left'
+        color='textPrimary'
+        gutterBottom
       >
-        <Typography
-          style={{ color: "black" }}
-          component='h3'
-          variant='h3'
-          align='left'
-          color='textPrimary'
-          gutterBottom
-        >
-          <span style={{ color: "#ffa834" }}>Anonymizer </span> turns domain
-          <br />
-          knowledge into code
-        </Typography>
-
-        <hr style={{ width: "30%", float: "left" }} />
+        <span style={{ color: "#ffa834" }}>Anonymizer </span> turns domain
         <br />
-        <Typography
-          variant='h5'
-          color='textSecondary'
-          component='p'
-          style={{ marginTop: "2rem", width: "60%" }}
-        >
-          Innføring av GDPR har store konsekvenser for behandling av personlig
-          og sensitiv data. Anonymizer gir støtte for enkelt å lage programmer
-          som understøtter funksjonelle krav som GDPR pålegger og g9 Anonymizer
-          kan produsere databaser anonymisert for test- og utviklingspersonell
-        </Typography>
-      </div>
-    </React.Fragment>
+        knowledge into code
+      </Typography>
+
+      <hr style={{ width: "30%", float: "left" }} />
+      <br />
+      <Typography
+        variant='h5'
+        color='textSecondary'
+        component='p'
+        style={{ marginTop: "2rem", width: "60%" }}
+      >
+        Innføring av GDPR har store konsekvenser for behandling av personlig og
+        sensitiv data. Anonymizer gir støtte for enkelt å lage programmer som
+        understøtter funksjonelle krav som GDPR pålegger og g9 Anonymizer kan
+        produsere databaser anonymisert for test- og utviklingspersonell
+      </Typography>
+    </div>
   );
 };
 

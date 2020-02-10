@@ -9,7 +9,6 @@ const Layout: React.FC = () => {
   return (
     <React.Fragment>
       <Navbar />
-
       <HeaderContainer />
       <CardContainer />
       <Footer />

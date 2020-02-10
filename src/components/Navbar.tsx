@@ -51,7 +51,7 @@ const Navbar = (props: any) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div id='home' className={classes.root}>
       <AppBar
         position='static'
         className={clsx(classes.appBar, {
@@ -117,7 +117,7 @@ const Navbar = (props: any) => {
       <ScrollTop {...props}>
         <ScrollLink
           activeClass='active'
-          to='Home'
+          to='home'
           spy={true}
           smooth={true}
           offset={-70}
