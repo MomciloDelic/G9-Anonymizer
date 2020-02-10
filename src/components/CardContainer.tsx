@@ -10,7 +10,9 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
+import { dbmasker, dbimport, dbano } from "../assets/text/feature";
 import FeatureModal from "./FeaturesModal";
+import DbMasker from "../assets/images/dbmasker.png";
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -25,6 +27,11 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center",
     alignItems: "baseline",
     marginBottom: theme.spacing(2)
+  },
+  button: {
+    textAlign: "center",
+    display: "block",
+    margin: "auto"
   }
 }));
 
@@ -33,8 +40,15 @@ const tiers = [
     title: "DBano",
     price: "0",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "DBano genererer ANO-filer som beskriver databasestruktur ved bruk av ANO DSL-språket beskrevet i DBmasker ANO-syntaks."
     ],
+    infoText: dbano.split("\n").map((i, key) => {
+      return (
+        <Typography variant='body1' key={key} style={{ marginTop: "1.5rem" }}>
+          {i}
+        </Typography>
+      );
+    }),
     buttonText: "LES MER",
     buttonVariant: "outlined"
   },
@@ -43,8 +57,15 @@ const tiers = [
     subheader: "Most popular",
     price: "1500",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "DBimport støtter omvendt konskruksjon av databaseskjemaer i Java-kildekode med JPA-merknader."
     ],
+    infoText: dbimport.split("\n").map((i, key) => {
+      return (
+        <Typography variant='body1' key={key} style={{ marginTop: "1.5rem" }}>
+          {i}
+        </Typography>
+      );
+    }),
     buttonText: "LES MER",
     buttonVariant: "contained"
   },
@@ -52,8 +73,15 @@ const tiers = [
     title: "DBmasker",
     price: "3000",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      "DBmasker er en tjeneste som hjelper bedrifter håndtere oppgaver knyttet til maskering av data på en robust og sikker måte. "
     ],
+    infoText: dbmasker.split("\n").map((i, key) => {
+      return (
+        <Typography key={key} style={{ marginTop: "1.5rem" }}>
+          {i}
+        </Typography>
+      );
+    }),
     buttonText: "LES MER",
     buttonVariant: "outlined"
   }
@@ -64,7 +92,7 @@ const CardContainer: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Container maxWidth='lg' component='main'>
+      <Container id='tjenester' maxWidth='lg' component='main'>
         <Typography
           component='h1'
           variant='h2'
@@ -95,7 +123,7 @@ const CardContainer: React.FC = () => {
                 <CardContent>
                   <div className={classes.cardPricing}>
                     <Typography component='h2' variant='h4' color='textPrimary'>
-                      NOK{tier.price}
+                      NOK {tier.price}
                     </Typography>
                     <Typography variant='h6' color='textSecondary'>
                       /mnd
@@ -114,11 +142,12 @@ const CardContainer: React.FC = () => {
                     ))}
                   </ul>
                 </CardContent>
-                <CardActions>
+                <CardActions className={classes.button}>
                   <FeatureModal
                     buttonText='LES MER'
                     title={tier.title}
-                    info={tier.description}
+                    info={tier.infoText}
+                    modalImg={DbMasker}
                   />
                 </CardActions>
               </Card>
