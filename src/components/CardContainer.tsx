@@ -15,9 +15,20 @@ import FeatureModal from "./FeaturesModal";
 import DbMasker from "../assets/images/dbmasker.png";
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    overflow: "hidden"
+  },
   title: {
     color: "#fe8e00",
-    margin: "0 0 4rem 0"
+    margin: "0 0 4rem 0",
+    fontWeight: 400,
+    textTransform: "uppercase",
+    [theme.breakpoints.down("md")]: {
+      marginTop: "8rem"
+    }
+  },
+  card: {
+    backgroundColor: "#fff"
   },
   cardHeader: {
     color: "#fe8e00"
@@ -91,29 +102,29 @@ const CardContainer: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <div className={classes.root}>
       <Container id='tjenester' maxWidth='lg' component='main'>
         <Typography
           component='h1'
-          variant='h2'
+          variant='h4'
           align='center'
           gutterBottom
           className={classes.title}
         >
-          Tjenester
+          Hva vi tilbyr
         </Typography>
 
-        <Grid container spacing={5} alignItems='flex-end'>
+        <Grid container spacing={10} alignItems='flex-end' justify='center'>
           {tiers.map(tier => (
             // Enterprise card is full width at sm breakpoint
             <Grid
               item
               key={tier.title}
-              xs={12}
+              xs={8}
               sm={tier.title === "Enterprise" ? 12 : 6}
               md={4}
             >
-              <Card>
+              <Card className={classes.card}>
                 <CardHeader
                   title={tier.title}
                   titleTypographyProps={{ align: "center" }}
@@ -155,7 +166,7 @@ const CardContainer: React.FC = () => {
           ))}
         </Grid>
       </Container>
-    </React.Fragment>
+    </div>
   );
 };
 
