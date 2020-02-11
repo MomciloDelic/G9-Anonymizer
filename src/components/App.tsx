@@ -6,7 +6,7 @@ import {
 } from "@material-ui/core/styles";
 import { Route, Router, Switch } from "react-router-dom";
 import history from "../history";
-import Layout from "../pages/Layout";
+import Home from "../pages/Home";
 
 let theme = createMuiTheme({
   typography: {
@@ -21,7 +21,7 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <Router history={history}>
         <Switch>
-          <Route path='/' exact component={Layout} />
+          <Route path='/' exact component={Home} />
         </Switch>
       </Router>
     </MuiThemeProvider>
