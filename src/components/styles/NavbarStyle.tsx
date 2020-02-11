@@ -67,7 +67,8 @@ const NavbarStyle = makeStyles(theme => ({
       textDecoration: "none",
 
       "&:hover": {
-        boxShadow: "inset 0 -2px 0 0 #000"
+        boxShadow: "inset 0 -2px 0 0 #000",
+        backgroundColor: "#f9f9f9"
       },
 
       [theme.breakpoints.down("sm")]: {
