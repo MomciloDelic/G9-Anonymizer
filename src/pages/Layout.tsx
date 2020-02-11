@@ -1,15 +1,18 @@
 import React from "react";
-import CardContainer from "../components/CardContainer";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import HeaderContainer from "../components/HeaderContainer";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import OmOss from "../pages/OmOss";
+import FeaturesPage from "./FeaturesPage";
+import CardContainer from "../components/CardContainer";
 
 const Layout: React.FC = () => {
   return (
     <React.Fragment>
+      <CssBaseline />
       <Navbar />
       <HeaderContainer />
+      <FeaturesPage />
       <CardContainer />
       <Footer />
     </React.Fragment>
