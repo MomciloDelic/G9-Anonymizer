@@ -1,18 +1,24 @@
 import React from "react";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import {
+  createMuiTheme,
+  MuiThemeProvider,
+  responsiveFontSizes
+} from "@material-ui/core/styles";
 import { Route, Router, Switch } from "react-router-dom";
 import history from "../history";
 import Layout from "../pages/Layout";
 
-const useStyles = createMuiTheme({
+let theme = createMuiTheme({
   typography: {
-    fontFamily: '"Open Sans", Sans-serif'
+    fontFamily: '"Open Sans", Sans-serif',
+    fontWeightRegular: 300
   }
 });
+theme = responsiveFontSizes(theme);
 
 const App = () => {
   return (
-    <MuiThemeProvider theme={useStyles}>
+    <MuiThemeProvider theme={theme}>
       <Router history={history}>
         <Switch>
           <Route path='/' exact component={Layout} />
