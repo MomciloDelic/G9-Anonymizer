@@ -76,7 +76,7 @@ const Navbar = (props: any) => {
 
               <Link to='/protected'>
                 <IconButton disableTouchRipple>
-                  <Typography variant='h6'>Min side</Typography>
+                  <Typography variant='h6'>Login</Typography>
                   <AccountCircle className={classes.loginButton} />
                 </IconButton>
               </Link>
@@ -111,7 +111,7 @@ const Navbar = (props: any) => {
           </IconButton>
         </div>
         <List>
-          {["Tjenester", "Om oss", "Kontakt", "Login"].map(text => (
+          {["Hvorfor", "Kontakt", "Login"].map(text => (
             <ListItem button key={text} className={classes.drawerButtons}>
               <NavLink
                 toSection={text}
