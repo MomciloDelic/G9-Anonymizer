@@ -2,10 +2,9 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-import Divider from "@material-ui/core/Divider";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
 import Logo from "../assets/images/esito.png";
 
 const useStyles = makeStyles(theme => ({
@@ -17,21 +16,25 @@ const useStyles = makeStyles(theme => ({
     }
   },
   footer: {
-    borderTop: `1px solid ${theme.palette.divider}`,
-    marginTop: theme.spacing(8),
-    marginBottom: theme.spacing(10),
-    paddingBottom: theme.spacing(10),
-    [theme.breakpoints.up("sm")]: {
-      paddingTop: theme.spacing(5),
-      paddingBottom: theme.spacing(30)
-    },
-    padding: theme.spacing(20),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-    height: theme.spacing(8)
+    backgroundColor: "#1a1a1a",
+    marginTop: "10rem",
+    color: "#fff",
+    overflowX: "hidden"
   },
-  divider: {
-    margin: theme.spacing(2, 25)
+  grid: {
+    marginTop: "5rem"
+  },
+  link: {
+    color: "#fe8e00",
+    "&:hover": {
+      color: "#fff",
+      textDecoration: "underline"
+    },
+    padding: 0,
+    margin: 0
+  },
+  img: {
+    marginTop: "4rem"
   }
 }));
 
@@ -54,46 +57,55 @@ const Footer: React.FC = () => {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
-      <Container maxWidth='md' component='footer' className={classes.footer}>
-        <div>
-          <img src={Logo} alt='Esito Logo' />
-        </div>
-        <Grid container spacing={0} justify='space-evenly'>
-          {footers.map(footer => (
-            <Grid item xs={6} sm={2}>
-              <Typography
-                variant='h4'
-                color='textPrimary'
-                gutterBottom
-              ></Typography>
-              <ul>
-                {footer.description.map(item => (
-                  <li key={item}>
-                    <Link href='#' variant='subtitle1' color='textSecondary'>
-                      {item}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Grid>
-          ))}
-          <Grid item xs={12}>
-            <Typography
-              variant='h6'
-              color='textPrimary'
-              gutterBottom
-            ></Typography>
-            <Divider className={classes.divider} />
-            <Typography variant='h6' gutterBottom>
-              Sanderakerveien 114A, 0402 Oslo
-              <br></br>© Esito
-            </Typography>
-          </Grid>
+    <div className={classes.footer}>
+      <Grid className={classes.grid} container justify='center' direction='row'>
+        <Grid item md={2} xs={7}>
+          <Typography variant='subtitle1' gutterBottom>
+            Esito AS
+          </Typography>
+
+          <Typography variant='subtitle1' gutterBottom>
+            Datterselskap av
+          </Typography>
+          <Button
+            className={classes.link}
+            disableTouchRipple
+            href='https://www.inmeta.no'
+            target='_blank'
+          >
+            Inmeta Consulting
+          </Button>
         </Grid>
-        <Box mt={5}></Box>
-      </Container>
-    </React.Fragment>
+        <Grid item md={2} xs={7}>
+          <Typography variant='subtitle1' gutterBottom>
+            Sanderakerveien 114 A
+          </Typography>
+          <Typography variant='subtitle1' gutterBottom>
+            PB 4384 Nydalen
+          </Typography>
+          <Typography variant='subtitle1' gutterBottom>
+            0402 Oslo
+          </Typography>
+        </Grid>
+        <Grid item md={2} xs={7}>
+          <Typography variant='subtitle1' gutterBottom>
+            Telefon +47 2289 1000
+          </Typography>
+          <Typography variant='subtitle1' gutterBottom>
+            E-post:
+            <Button
+              className={classes.link}
+              href='mailto:adm@esito.no'
+              disableTouchRipple
+              style={{ paddingLeft: "0.5rem" }}
+            >
+              adm@esito.no
+            </Button>
+          </Typography>
+        </Grid>
+      </Grid>
+      <img className={classes.img} src={Logo} alt='Esito Logo' />
+    </div>
   );
 };
 
