@@ -16,7 +16,8 @@ import DbMasker from "../assets/images/dbmasker.png";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    overflow: "hidden"
+    overflow: "hidden",
+    minHeight: "55vh"
   },
   title: {
     color: "#fe8e00",
@@ -28,7 +29,10 @@ const useStyles = makeStyles(theme => ({
     }
   },
   card: {
-    backgroundColor: "#fff"
+    backgroundColor: "#fff	",
+    borderRadius: "20px",
+    boxShadow: "none",
+    borderStyle: "groove"
   },
   cardHeader: {
     color: "#fe8e00"
@@ -84,7 +88,7 @@ const tiers = [
     title: "DBmasker",
     price: "3000",
     description: [
-      "DBmasker er en tjeneste som hjelper bedrifter håndtere oppgaver knyttet til maskering av data på en robust og sikker måte. "
+      "DBmasker hjelper bedrifter håndtere oppgaver knyttet til maskering av data på en robust og sikker måte."
     ],
     infoText: dbmasker.split("\n").map((i, key) => {
       return (
