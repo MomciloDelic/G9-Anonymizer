@@ -72,7 +72,7 @@ const tiers = [
     subheader: "Most popular",
     price: "1500",
     description: [
-      "DBimport støtter omvendt konskruksjon av databaseskjemaer i Java-kildekode med JPA-merknader."
+      "DBimport støtter omvendt konskruksjon av databaseskjemaer til Java-kildekode med JPA-merknader."
     ],
     infoText: dbimport.split("\n").map((i, key) => {
       return (
