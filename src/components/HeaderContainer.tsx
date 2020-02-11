@@ -9,7 +9,7 @@ const useStyles = makeStyles(theme => ({
   heroContent: {
     minHeight: "80vh",
     padding: "4rem",
-    marginTop: "5rem"
+    marginTop: "8rem"
   },
   button: {
     backgroundColor: "#000",
