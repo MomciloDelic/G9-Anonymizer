@@ -55,20 +55,21 @@ const NavbarStyle = makeStyles(theme => ({
     margin: "25px 0px 0 0"
   },
   desktopToolbar: {
+    "& a": {
+      textDecoration: "none"
+    },
     "& button": {
       color: "#fe8e00",
       margin: "25px 25px",
       fontSize: "1.2rem",
       textTransform: "none",
       borderRadius: "0",
+      textDecoration: "none",
+
       "&:hover": {
-        backgroundColor: "#fff"
+        boxShadow: "inset 0 -2px 0 0 #000"
       },
-      "& a": {
-        "&:hover": {
-          boxShadow: "inset 0 -2px 0 0 #000"
-        }
-      },
+
       [theme.breakpoints.down("sm")]: {
         display: "none"
       }
@@ -104,8 +105,9 @@ const NavbarStyle = makeStyles(theme => ({
     color: "#000"
   },
   loginButton: {
-    fontSize: "3rem",
-    color: "#2b2626"
+    fontSize: "2rem",
+    color: "#2b2626",
+    marginLeft: "0.5rem"
   }
 }));
 

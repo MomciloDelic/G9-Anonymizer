@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -17,7 +18,8 @@ import Zoom from "@material-ui/core/Zoom";
 import NavLink from "./NavLink";
 import NavbarStyle from "./styles/NavbarStyle";
 import Logo from "../assets/images/esito.png";
-import { Typography } from "@material-ui/core";
+import Typography from "@material-ui/core/Typography";
+import { Button } from "@material-ui/core";
 
 const useStyles = NavbarStyle;
 function ScrollTop(props: any) {
@@ -65,12 +67,19 @@ const Navbar = (props: any) => {
 
           <Toolbar style={{ justifyContent: "center", alignContent: "center" }}>
             <div className={classes.desktopToolbar}>
-              <NavLink toSection='tjenester' text={"Tjenester"} />
-              <NavLink toSection='kontakt' text={"Kontakt "} />
-              <IconButton disableTouchRipple>
-                <Typography variant='h6'>Min side</Typography>
-                <AccountCircle className={classes.loginButton} />
-              </IconButton>
+              <Link to='/hvorfor'>
+                <Button>Hvorfor?</Button>
+              </Link>
+              <Link to='/kontakt'>
+                <Button>Kontakt</Button>
+              </Link>
+
+              <Link to='/protected'>
+                <IconButton disableTouchRipple>
+                  <Typography variant='h6'>Min side</Typography>
+                  <AccountCircle className={classes.loginButton} />
+                </IconButton>
+              </Link>
             </div>
           </Toolbar>
 
