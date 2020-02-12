@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
     <div className={classes.footer}>
       <Grid className={classes.grid} container justify='center' direction='row'>
         <Grid item md={2} xs={7}>
-          <Typography variant='subtitle1' gutterBottom>
+          <Typography variant='h6' gutterBottom>
             Esito AS
           </Typography>
 
