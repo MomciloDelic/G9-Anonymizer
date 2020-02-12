@@ -52,7 +52,7 @@ const HeaderContainer: React.FC = () => {
           color='inherit'
           size='large'
         >
-          Start nå
+          Prøv nå
         </Button>
       </Link>
     </div>
