@@ -62,13 +62,17 @@ const Navbar = (props: any) => {
       >
         <Toolbar>
           <div className={classes.title}>
-            <img src={Logo} alt='Esito Logo' />
+            <Link to='/'>
+              <img src={Logo} alt='Esito Logo' />
+            </Link>
           </div>
 
           <Toolbar style={{ justifyContent: "center", alignContent: "center" }}>
             <div className={classes.desktopToolbar}>
               <Link to='/hvorfor'>
-                <Button>Hvorfor?</Button>
+                <Button disableRipple disableFocusRipple>
+                  Hvorfor?
+                </Button>
               </Link>
               <Link to='/kontakt'>
                 <Button>Kontakt</Button>
@@ -113,11 +117,13 @@ const Navbar = (props: any) => {
         <List>
           {["Hvorfor", "Kontakt", "Login"].map(text => (
             <ListItem button key={text} className={classes.drawerButtons}>
-              <NavLink
-                toSection={text}
-                text={text}
-                handleDrawerClose={handleDrawerClose}
-              />
+              <Link
+                to={`/${text}`}
+                onClick={handleDrawerClose}
+                className={classes.drawerButtons}
+              >
+                {text}
+              </Link>
             </ListItem>
           ))}
         </List>

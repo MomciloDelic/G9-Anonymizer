@@ -41,7 +41,7 @@ const NavbarStyle = makeStyles(theme => ({
   drawerPaper: {
     width: drawerWidth,
     color: "#fe8e00",
-    background: "#fff"
+    background: "#fafafa"
   },
   drawerHeader: {
     display: "flex",
@@ -49,6 +49,9 @@ const NavbarStyle = makeStyles(theme => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: "flex-start"
+  },
+  drawerLink: {
+    textDecoration: "none"
   },
   menuIcon: {
     color: "#fe8e00",
@@ -68,7 +71,7 @@ const NavbarStyle = makeStyles(theme => ({
 
       "&:hover": {
         boxShadow: "inset 0 -2px 0 0 #000",
-        backgroundColor: "#f9f9f9"
+        backgroundColor: "#fafafa"
       },
 
       [theme.breakpoints.down("sm")]: {
@@ -85,17 +88,15 @@ const NavbarStyle = makeStyles(theme => ({
     }
   },
   drawerButtons: {
-    "& button": {
-      display: "block",
-      width: "100%"
-    },
     "& a": {
       color: "#000",
       textTransform: "none",
+      textDecoration: "none",
       fontSize: "1.5rem",
       borderRadius: 0,
       display: "block",
-      width: "100%"
+      width: "100%",
+      textAlign: "center"
     }
   },
   close: {
