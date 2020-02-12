@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme: Theme) =>
     paper: {
       textAlign: "center",
       boxShadow: "none",
-      width: "20rem"
+      width: "20rem",
+      backgroundColor: "#fafafa"
     },
     title: {
       marginBottom: "5rem",
@@ -48,9 +49,9 @@ const features = [
     icon: <img src={GdprIcon} height='50vh' />
   },
   {
-    title: "Syntesisk test data",
+    title: "Fiktiv data",
     text:
-      "Generer test data rett fra databasen for test- og utviklingspersonell",
+      "Generer test data rett fra produksjonsdatabasen for test- og utviklingspersonell",
     icon: <DataUsageIcon style={{ fontSize: "3.125rem" }} />
   }
 ];
